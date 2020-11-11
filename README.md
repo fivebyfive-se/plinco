@@ -1,2 +1,2 @@
-# sampl
+# plinco
 Samverkansplattform för ORU/INSA
