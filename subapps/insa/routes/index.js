@@ -1,15 +1,22 @@
 const { Router } = require('express');
 
-const ensureHttps = require('@lib/middleware/ensure-https');
-const themeCookie = require('@lib/middleware/theme-cookie');
+const ensureHttps = require('$middleware/ensure-https');
+const themeCookie = require('$middleware/theme-cookie');
+const prismic = require('$middleware/prismic');
 
 const router = Router();
 
 router
     .use(ensureHttps)
     .use(themeCookie)
+    .use(prismic)
 
-    .get('/', async (req, res) => res.render('index'))
+
+    .get('/', async (req, res) => {
+        const api = await req.getPrismicApi();
+        const doc = await api.getByUID('text-page', 'insa', { lang: req.lang });
+        res.render({ doc });
+    })
 
     .get('/languages/:lang', (req, res) => {
         res.cookie('language', req.params.lang, { maxAge: 900000, httpOnly: true });

@@ -1,7 +1,7 @@
 const { Router } = require('express');
 
-const ensureHttps = require('@lib/middleware/ensure-https');
-const themeCookie = require('@lib/middleware/theme-cookie');
+const ensureHttps = require('$middleware/ensure-https');
+const themeCookie = require('$middleware/theme-cookie');
 
 const router = Router();
 

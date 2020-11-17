@@ -3,7 +3,8 @@ const cookieParser = require('cookie-parser');
 const { join } = require('path');
 
 const { I18n } = require('i18n');
-const languageCookie = require('@lib/middleware/language-cookie');
+
+const languageCookie = require('$middleware/language-cookie');
 
 const i18n = new I18n({
     locales: ['en-US', 'sv-SE'],
