@@ -4,13 +4,23 @@
   "description": "Platform for International Cooperation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run web:build",
-    "start": "node -r dotenv/config --optimize_for_size --max_old_space_size=460 --gc_interval=100 index.js",
-    "dev": "concurrently \"npm run server:dev\" \"npm run web:dev\"",
+    "test": "mocha",
+    "build": "npm run web:build && npm run insa:build",
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 index.js",
+    "dev": "concurrently \"npm run server:dev\" \"npm run web:dev\" \"npm run insa:dev\"",
+    "insa:build": "grunt --base subapps/insa --gruntfile subapps/insa/Gruntfile.js build",
+    "insa:dev": "grunt --base subapps/insa --gruntfile subapps/insa/Gruntfile.js dev",
     "web:build": "grunt --base subapps/web --gruntfile subapps/web/Gruntfile.js build",
     "web:dev": "grunt --base subapps/web --gruntfile subapps/web/Gruntfile.js dev",
     "server:dev": "nodemon -r dotenv/config --optimize_for_size --max_old_space_size=460 --gc_interval=100 index.js"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@lib": "./lib",
+    "@models": "./lib/models",
+    "@api": "./subapps/api",
+    "@insa": "./subapps/insa",
+    "@web": "./subapps/web"
   },
   "dependencies": {
     "cookie-parser": "1.4.5",
@@ -22,9 +32,6 @@
     "pg": "8.4.1",
     "pug": "3.0.0",
     "qrcode": "1.4.4",
-    "sequelize": "6.3.5",
-    "tweetnacl": "1.0.3",
-    "tweetnacl-util": "0.15.1",
     "vhost": "3.0.2"
   },
   "devDependencies": {
@@ -32,15 +39,16 @@
     "@babel/preset-env": "^7.11.5",
     "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
-    "node": "^12.19.0",
-    "nodejs": "0.0.0",
     "grunt": "^1.3.0",
     "grunt-babel": "^8.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
     "load-grunt-tasks": "^5.1.0",
+    "mocha": "8.2.1",
+    "node": "^12.19.0",
     "node-sass": "^4.14.1",
+    "nodejs": "0.0.0",
     "nodemon": "^2.0.4"
   },
   "repository": {
@@ -60,5 +68,7 @@
     "url": "https://github.com/fivebyfive-se/plinco/issues"
   },
   "homepage": "https://github.com/fivebyfive-se/plinco#readme",
-  "engines" : { "node" : "15.1.0" }
+  "engines": {
+    "node": "15.1.0"
+  }
 }
