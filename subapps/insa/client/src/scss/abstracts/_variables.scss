@@ -69,8 +69,8 @@ $settings: (
 
     font: (
         family: (
-            body: "'Commissioner', sans-serif",
-            heading: "'Commissioner', sans-serif",
+            body: "'Public Sans', sans-serif",
+            heading: "'Public Sans', sans-serif",
             monospace: "'Fira Code', monospace"
         ),
 
@@ -103,28 +103,29 @@ $settings: (
         
         style: (
             normal: (
-                variation-settings: "'wght' 400"
+                font-weight: 400
             ),
             italic: (
-                variation-settings: "'slnt' -6"
+                font-style: italic
             ),
             semi-bold: (
-                variation-settings: "'wght' 550, 'FLAR' 100, 'VOLM' 0"
+                font-weight: 600
             ),
             bold: (
-                variation-settings: "'wght' 600, 'FLAR' 50, 'VOLM' 50"
+                font-weight: 700
             ),
             bold-italic: (
-                variation-settings: "'wght' 600, 'slnt' -6"
+                font-weight: 700,
+                font-style: italic
             ),
             light: (
-                variation-settings: "'wght' 200, 'slnt' -6"
+                font-weight: 100
             ),
             extra-bold: (
-                variation-settings: "'wght' 750, 'FLAR' 20, 'VOLM' 10" 
+                font-weight: 800
             ),
             black: (
-                variation-settings: "'wght' 900, 'FLAR' 50, 'VOLM' 0" 
+                font-weight: 900
             )
         )
     )

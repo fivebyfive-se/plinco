@@ -14,8 +14,8 @@ router
 
     .get('/', async (req, res) => {
         const api = await req.getPrismicApi();
-        const doc = await api.getByUID('text-page', 'insa', { lang: req.lang });
-        res.render({ doc });
+        const document = await api.getByUID('textpage', 'insa', { lang: req.lang });
+        res.render('index', { document });
     })
 
     .get('/languages/:lang', (req, res) => {

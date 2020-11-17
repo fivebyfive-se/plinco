@@ -6,7 +6,7 @@ include mixins/_navigation.pug
 doctype html
 html(lang=lang, data-theme=theme)
     head
-        title Oblik
+        title INSA - Internationalisering av samverkan
         link(rel='stylesheet', href='/css/critical.css')
 
         block head
@@ -14,30 +14,18 @@ html(lang=lang, data-theme=theme)
         article#app
             header.header
                 a.header__logo(href='/')
-                    include partials/oblik.svg.pug
-                h1.header__title #[a(href='/') Oblik]
-
-                button.header__menu-button(data-toggle='.header', data-toggle-class='header--menu-visible')
-
-                nav.header__menu
-                    +nav-link('secrets/latest', __('menu.secrets'), 'calendar-event')
-                    +nav-link('secrets/passwords', __('menu.passwords'), 'lock-password')
-                    +nav-link('secrets/groups', __('menu.groups'), 'group')
-                    +nav-link('secrets/payment', __('menu.payment'), 'bank-card-2')
-                    +nav-link('secrets/notes', __('menu.notes'), 'sticky-note')
-                    +nav-spacer()
-                    +nav-link('user/settings', __('menu.settings'), 'user-settings', 'highlight')
-                    +nav-spacer()
-                    +nav-link('user/chat', __('menu.chat'), 'chat-4', 'highlight--alternate')
-
+                    include partials/logo.svg.pug
+                h1.header__title #[a(href='/') INSA]
 
             main
                 block content
-                footer Foot
+                footer 
 
         link(rel='stylesheet', href='//cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css')
+        link(rel="preconnect", href="https://fonts.gstatic.com")
         link(href="//fonts.googleapis.com/css2?family=Fira+Code&display=swap", rel="stylesheet")
-        link(rel='stylesheet', href='/css/non-critical.css')      
+        link(href="//fonts.googleapis.com/css2?family=Public+Sans:wght@100;400;600;700;800;900&display=swap", rel="stylesheet")
+        link(rel='stylesheet', href='/css/non-critical.css') 
 
         +script('/js/main.js')
 

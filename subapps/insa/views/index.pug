@@ -1,6 +1,9 @@
 extends _layout.pug
 
 block content
-    h2 Title
-    p Text
+    section.page
+        h2.page__title !{ document.data.title }
+        div.page__intro !{ PrismicDOM.RichText.asHtml(document.data.intro, ctx.linkResolver) }
+        div.page__body !{ PrismicDOM.RichText.asHtml(document.data.body, ctx.linkResolver) }
+
 
