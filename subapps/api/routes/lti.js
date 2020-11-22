@@ -1,9 +1,19 @@
 const lti = require('ltijs').Provider;
+const Database = require('ltijs-sequelize');
+
+const db = new Database(
+    process.env.LTI_DB_NAME,
+    process.env.LTI_DB_USER,
+    process.env.LTI_DB_PASSWORD, {
+        host: '...',
+        dialect: 'postgresql',
+        logging: false
+    }
+)
 
 lti.setup(process.env.LTI_KEY || 'LTIKEY', // Key used to sign cookies and tokens
     { // Database configuration
-        url: 'mongodb://localhost/database',
-        connection: { user: 'user', pass: 'password' }
+        plugin: db
     },
     { // Options
         appRoute: '/', loginRoute: '/login', // Optionally, specify some of the reserved routes
@@ -22,6 +32,22 @@ lti.onConnect((token, req, res) => {
 })
 
 module.exports = async () => {
+    // Start service:
     await lti.deploy({ serverless: true });
+
+    // Register platform:
+    await lti.registerPlatform({
+        url: 'https://blackboard.oru.se/',
+        name: 'Blackboard Learn',
+        clientId: 'TOOLCLIENTID',
+        authenticationEndpoint: 'https://platform.url/auth',
+        accesstokenEndpoint: 'https://platform.url/token',
+        authConfig: {
+            method: 'JWK_SET',
+            key: 'https://platform.url/keyset'
+        }
+    });
+
+    // Return express-ref:
     return lti.app;
 };
