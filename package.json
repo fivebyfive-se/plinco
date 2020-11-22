@@ -21,6 +21,7 @@
     "$models": "./lib/models",
     "$api": "./subapps/api",
     "$insa": "./subapps/insa",
+    "$lti": "./subapps/lti",
     "$web": "./subapps/web"
   },
   "dependencies": {
@@ -29,6 +30,8 @@
     "express-request-language": "1.1.15",
     "i18n": "0.13.2",
     "ioredis": "4.17.3",
+    "ltijs": "5.4.8",
+    "ltijs-sequelize": "2.2.4",
     "module-alias": "2.2.2",
     "pg": "8.4.1",
     "prismic-dom": "2.2.4",
