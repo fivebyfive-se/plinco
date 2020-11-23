@@ -33,13 +33,13 @@
     "ltijs": "5.4.8",
     "ltijs-sequelize": "2.2.4",
     "module-alias": "2.2.2",
-    "mongoose": "5.10.15",
     "pg": "8.4.1",
     "prismic-dom": "2.2.4",
     "prismic-javascript": "3.0.2",
     "prismic.io": "3.6.1",
     "pug": "3.0.0",
     "qrcode": "1.4.4",
+    "sequelize": "6.3.5",
     "vhost": "3.0.2"
   },
   "devDependencies": {
