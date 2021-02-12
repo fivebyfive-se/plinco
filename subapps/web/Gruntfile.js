@@ -35,8 +35,7 @@ module.exports = (grunt) => {
             },
             dist: {
                 files: {
-                    'public/css/critical.css': 'client/src/scss/critical.scss',
-                    'public/css/non-critical.css': 'client/src/scss/non-critical.scss',
+                    'public/css/main.css': 'client/src/scss/main.scss',
                 }
             }
         },

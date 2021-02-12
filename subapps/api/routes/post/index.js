@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const router = Router();
 
-const Permissions = require('$models/enums/permissions');
+// const Permissions = require('$models/enums/permissions');
 
 module.exports = router
     .get('/:postId/:requestToken?', async (req, res) => {

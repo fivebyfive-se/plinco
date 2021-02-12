@@ -1,0 +1,112 @@
+/* 
+  Global scope 
+*/
+:root {
+    --pl-color-blackish:        #202527;
+    --pl-color-darkest-blue:    #011F26;
+    --pl-color-darker-grey:     #1F1B18;
+    --pl-color-dark-grey:       #3D3530;
+    --pl-color-grey:            #574C45;
+    --pl-color-grey-orange:     #A38C7F;
+    --pl-color-grey-pink:       #E6D1C5;
+    --pl-color-whiteish:        #FFE8DB;
+    --pl-color-dark-red:        #400101;
+    --pl-color-medium-red:      #8C0303;
+    --pl-color-red:             #F20505;
+    --pl-color-dark-blue:       #037F8C;
+    --pl-color-blue:            #04BFBF;
+    --pl-color-light-blue:      #05E6E6;
+    --pl-color-reddish-orange:  #DB3607;
+    --pl-color-orange:          #F25C05;
+    --pl-color-yellowish-orange:#DB7407;
+    --pl-color-yellow:          #F9A107;
+
+    /* Change primary color from blue to indigo */
+    --primary-color: var(--pl-color-dark-blue);
+    --primary-color-light: var(--pl-color-blue);
+    --primary-color-very-light: var(--pl-color-light-blue);
+    --primary-color-dark: var(--pl-color-dark-grey);  
+    --primary-color-very-dark: var(--pl-color-darkest-blue);  
+    --primary-box-shadow-color: var(--pl-color-darker-grey);
+    --primary-box-shadow-color-darker: var(--pl-color-darkest-blue);
+    --text-color-on-primary-color-bg: var(--pl-color-whiteish);  
+  
+    /* Card */
+  
+    // --card-border-radius: 0.5rem;
+  
+    /* Card (light mode only) */
+  
+    --lm-card-bg-image: linear-gradient(var(--pl-color-whiteish), var(--pl-color-grey-pink));  
+    --lm-card-border-color: var(--pl-color-grey);          /* Before: rgba(0, 0, 0, 0.2) */
+    --lm-card-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);    
+  
+    /* Card (dark mode only) */
+  
+    --dm-card-bg-image: linear-gradient(var(--pl-color-darkest-blue), var(--pl-color-darker-grey));  
+    --dm-card-border-color: rgba(0, 0, 0, 0.1);       /* Before: rgba(0, 0, 0, 0.2) */
+    --dm-card-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);     
+  
+    /* Input (light mode only) */
+  
+    --lm-input-box-shadow: 0 0.2rem 0 rgba(0, 0, 0, 0.05);  
+  
+    /* Input (dark mode only) */
+  
+    --dm-input-box-shadow: var(--lm-input-box-shadow);      
+  
+    /* Primary button (light mode only) */
+  
+    // --lm-button-primary-bg-image: linear-gradient(var(--primary-color), var(--primary-color-dark));             
+    // --lm-button-primary-bg-image-hover: linear-gradient(var(--primary-color-light), var(--primary-color-dark)); 
+  
+    /* Primary button (dark mode only) */
+  
+    // --dm-button-primary-bg-image: linear-gradient(var(--primary-color), var(--primary-color-dark));             
+    // --dm-button-primary-bg-image-hover: linear-gradient(var(--primary-color-light), var(--primary-color-dark)); 
+
+    --pl-font-weight-black: 900;
+    --pl-font-weight-bold: 700;
+    --pl-font-weight-normal: 300;
+
+    --heading-font-weight:           var(--pl-font-weight-black);
+    --content-title-font-weight:     var(--pl-font-weight-black);
+    --card-title-font-weight:        var(--pl-font-weight-black);
+    --table-header-cell-font-weight: var(--pl-font-weight-bold);
+    --dropdown-header-font-weight:   var(--pl-font-weight-bold);
+    --modal-title-font-weight:       var(--pl-font-weight-black);
+    --alert-heading-font-weight:     var(--pl-font-weight-black);
+    --navbar-brand-font-weight:      var(--pl-font-weight-black);
+    --sidebar-title-font-weight:     var(--pl-font-weight-black);
+    --sidebar-brand-font-weight:     var(--pl-font-weight-black);
+
+    --base-line-height: 2.2;
+
+    --base-font-size: 2.1rem;
+    --content-title-font-size: 3.6rem;
+    --small-button-font-size: 1.75rem;
+    --large-button-font-size: 2.1rem;
+    --code-font-size: var(--base-font-size);
+    --small-input-font-size: var(--small-button-font-size);
+    --large-input-font-size: var(--large-button-font-size);
+
+    --base-border-radius: 0.05rem;
+  }
+  
+  /* 
+    Local scope 
+    ~ This way, only the primary button's height and border width is affected.
+    ~ Default button remains the same.
+  */
+  .btn {
+      font-weight: var(--pl-font-weight-bold);
+  }
+  .btn-primary {
+    --button-height: 3.6rem;  /* Before: 3.2rem (32px) */
+    --button-border-width: 0; /* Before: var(--base-border-width) */
+  }
+
+  body {
+      font-family: Jost, sans-serif;
+      font-weight: var(--pl-font-weight-normal);
+  }
